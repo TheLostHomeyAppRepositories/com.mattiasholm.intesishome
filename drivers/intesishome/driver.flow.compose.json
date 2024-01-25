@@ -1,0 +1,75 @@
+{
+  "actions": [
+    {
+      "id": "ac_mode_action",
+      "title": {"en": "Set mode" },
+      "args": [
+        {
+          "type": "dropdown",
+          "name": "mode",
+          "values": [
+            { "id": "0", "label": { "en": "Auto" }},
+            { "id": "4", "label": { "en": "Cool" }},
+            { "id": "1", "label": { "en": "Heat" }},
+            { "id": "3", "label": { "en": "Fan" }},
+            { "id": "2", "label": { "en": "Dry" }}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ac_fan_speed_action",
+      "title": { "en": "Set fan speed" },
+      "args": [
+        {
+          "type": "dropdown",
+          "name": "fan_speed",
+          "title": { "en": "Fan speed" },
+          "values": [
+            { "id": "1", "title": { "en": "1" } },
+            { "id": "2", "title": { "en": "2" } },
+            { "id": "3", "title": { "en": "3" } },
+            { "id": "4", "title": { "en": "4" } },
+            { "id": "5", "title": { "en": "5" } }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ac_hvane_action",
+      "title": { "en": "Set horizontal vane direction" },
+      "args": [
+        {
+          "type": "dropdown",
+          "name": "hvane",
+          "title": { "en": "Direction" },
+          "values": [
+            { "id": "1", "title": { "en": "1" } },
+            { "id": "2", "title": { "en": "2" } },
+            { "id": "3", "title": { "en": "3" } },
+            { "id": "4", "title": { "en": "4" } },
+            { "id": "5", "title": { "en": "5" } }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ac_vvane_action",
+      "title": { "en": "Set vertical vane direction" },
+      "args": [
+        {
+          "type": "dropdown",
+          "name": "vvane",
+          "title": { "en": "Direction" },
+          "values": [
+            { "id": "1", "title": { "en": "1" } },
+            { "id": "2", "title": { "en": "2" } },
+            { "id": "3", "title": { "en": "3" } },
+            { "id": "4", "title": { "en": "4" } },
+            { "id": "5", "title": { "en": "5" } }
+          ]
+        }
+      ]
+    }
+  ]
+}

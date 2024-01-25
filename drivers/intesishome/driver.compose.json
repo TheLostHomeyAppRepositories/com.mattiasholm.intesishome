@@ -1,0 +1,94 @@
+{
+  "name": {
+    "en": "IntesisHome"
+  },
+  "class": "other",
+  "capabilities": [
+    "target_temperature",
+    "measure_temperature",
+    "onoff",
+    "ac_fan_speed",
+    "ac_mode",
+    "ac_vvane", 
+    "ac_hvane"
+  ],
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "cloud"
+  ],
+  "capabilitiesOptions": {
+    "onoff": {
+      "title": {
+        "en": "Power"
+      }
+    },
+    "target_temperature": {
+      "title": {
+        "en": "Target temperature"
+      },
+      "type": "Number",
+      "units": "°C",
+      "decimals": 0,
+      "step": 1,
+      "min": 16,
+      "max": 30
+    },
+    "measure_temperature": {
+      "title": {
+        "en": "Temperature"
+      },
+      "type": "Number",
+      "units": "°C"      
+    }
+  },
+  "images": {
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png",
+    "xlarge": "{{driverAssetsPath}}/images/xlarge.png"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "settings" 
+      }
+    },
+    {
+      "id": "settings"     
+    }
+  ],
+  "settings": [{
+    "type": "group",
+    "label": {
+      "en": "Account settings"
+    },
+    "children": [{
+      "id": "username",
+      "type": "text",
+      "label": {
+        "en": "Username"
+      }
+    }, {
+      "id": "password",
+      "type": "password",
+      "label": {
+        "en": "Password"
+      }
+    }, {
+      "id": "intesisDeviceID",
+      "type": "label",
+      "label": {
+        "en": "intesisHome DeviceID"
+      }
+      },{
+      "id": "interval",
+      "type": "number",
+      "label": {
+        "en": "Data poll interval in seconds"
+      }
+    }]
+  }]
+}

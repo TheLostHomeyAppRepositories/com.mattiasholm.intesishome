@@ -1,0 +1,12 @@
+{
+    "pair": {
+        "title": "Account settings",
+        "username": "Username",
+        "password": "Password",
+        "authenticate": "Authenticate",
+        "save": "Save settings",
+        "instruction": "Username and password used for accessing https://accloud.intesis.com/",
+        "interval": "Data poll interval in seconds",
+        "device": "Device"
+    }
+}

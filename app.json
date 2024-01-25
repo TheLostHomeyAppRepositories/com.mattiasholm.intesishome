@@ -1,0 +1,513 @@
+{
+  "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
+  "id": "com.mattiasholm.intesishome",
+  "version": "1.0.0",
+  "compatibility": ">=5.0.0",
+  "brandColor": "#002b57",
+  "sdk": 3,
+  "platforms": [
+    "local"
+  ],
+  "name": {
+    "en": "IntesisHome"
+  },
+  "description": {
+    "en": "Take control of Intesis AC Cloud Control"
+  },
+  "category": [
+    "climate"
+  ],
+  "permissions": [],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png",
+    "xlarge": "/assets/images/xlarge.png"
+  },
+  "author": {
+    "name": "Mattias Holm",
+    "email": "m@wert.se"
+  },
+  "flow": {
+    "actions": [
+      {
+        "id": "ac_mode_action",
+        "title": {
+          "en": "Set mode"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=intesishome"
+          },
+          {
+            "type": "dropdown",
+            "name": "mode",
+            "values": [
+              {
+                "id": "0",
+                "label": {
+                  "en": "Auto"
+                }
+              },
+              {
+                "id": "4",
+                "label": {
+                  "en": "Cool"
+                }
+              },
+              {
+                "id": "1",
+                "label": {
+                  "en": "Heat"
+                }
+              },
+              {
+                "id": "3",
+                "label": {
+                  "en": "Fan"
+                }
+              },
+              {
+                "id": "2",
+                "label": {
+                  "en": "Dry"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ac_fan_speed_action",
+        "title": {
+          "en": "Set fan speed"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=intesishome"
+          },
+          {
+            "type": "dropdown",
+            "name": "fan_speed",
+            "title": {
+              "en": "Fan speed"
+            },
+            "values": [
+              {
+                "id": "1",
+                "title": {
+                  "en": "1"
+                }
+              },
+              {
+                "id": "2",
+                "title": {
+                  "en": "2"
+                }
+              },
+              {
+                "id": "3",
+                "title": {
+                  "en": "3"
+                }
+              },
+              {
+                "id": "4",
+                "title": {
+                  "en": "4"
+                }
+              },
+              {
+                "id": "5",
+                "title": {
+                  "en": "5"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ac_hvane_action",
+        "title": {
+          "en": "Set horizontal vane direction"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=intesishome"
+          },
+          {
+            "type": "dropdown",
+            "name": "hvane",
+            "title": {
+              "en": "Direction"
+            },
+            "values": [
+              {
+                "id": "1",
+                "title": {
+                  "en": "1"
+                }
+              },
+              {
+                "id": "2",
+                "title": {
+                  "en": "2"
+                }
+              },
+              {
+                "id": "3",
+                "title": {
+                  "en": "3"
+                }
+              },
+              {
+                "id": "4",
+                "title": {
+                  "en": "4"
+                }
+              },
+              {
+                "id": "5",
+                "title": {
+                  "en": "5"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ac_vvane_action",
+        "title": {
+          "en": "Set vertical vane direction"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=intesishome"
+          },
+          {
+            "type": "dropdown",
+            "name": "vvane",
+            "title": {
+              "en": "Direction"
+            },
+            "values": [
+              {
+                "id": "1",
+                "title": {
+                  "en": "1"
+                }
+              },
+              {
+                "id": "2",
+                "title": {
+                  "en": "2"
+                }
+              },
+              {
+                "id": "3",
+                "title": {
+                  "en": "3"
+                }
+              },
+              {
+                "id": "4",
+                "title": {
+                  "en": "4"
+                }
+              },
+              {
+                "id": "5",
+                "title": {
+                  "en": "5"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "drivers": [
+    {
+      "name": {
+        "en": "IntesisHome"
+      },
+      "class": "other",
+      "capabilities": [
+        "target_temperature",
+        "measure_temperature",
+        "onoff",
+        "ac_fan_speed",
+        "ac_mode",
+        "ac_vvane",
+        "ac_hvane"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "cloud"
+      ],
+      "capabilitiesOptions": {
+        "onoff": {
+          "title": {
+            "en": "Power"
+          }
+        },
+        "target_temperature": {
+          "title": {
+            "en": "Target temperature"
+          },
+          "type": "Number",
+          "units": "°C",
+          "decimals": 0,
+          "step": 1,
+          "min": 16,
+          "max": 30
+        },
+        "measure_temperature": {
+          "title": {
+            "en": "Temperature"
+          },
+          "type": "Number",
+          "units": "°C"
+        }
+      },
+      "images": {
+        "small": "/drivers/intesishome/assets/images/small.png",
+        "large": "/drivers/intesishome/assets/images/large.png",
+        "xlarge": "/drivers/intesishome/assets/images/xlarge.png"
+      },
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "settings"
+          }
+        },
+        {
+          "id": "settings"
+        }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Account settings"
+          },
+          "children": [
+            {
+              "id": "username",
+              "type": "text",
+              "label": {
+                "en": "Username"
+              }
+            },
+            {
+              "id": "password",
+              "type": "password",
+              "label": {
+                "en": "Password"
+              }
+            },
+            {
+              "id": "intesisDeviceID",
+              "type": "label",
+              "label": {
+                "en": "intesisHome DeviceID"
+              }
+            },
+            {
+              "id": "interval",
+              "type": "number",
+              "label": {
+                "en": "Data poll interval in seconds"
+              }
+            }
+          ]
+        }
+      ],
+      "id": "intesishome"
+    }
+  ],
+  "capabilities": {
+    "ac_fan_speed": {
+      "title": {
+        "en": "Fan speed"
+      },
+      "type": "enum",
+      "uiComponent": "picker",
+      "getable": true,
+      "setable": true,
+      "values": [
+        {
+          "id": "1",
+          "title": {
+            "en": "Level 1"
+          }
+        },
+        {
+          "id": "2",
+          "title": {
+            "en": "Level 2"
+          }
+        },
+        {
+          "id": "3",
+          "title": {
+            "en": "Level 3"
+          }
+        },
+        {
+          "id": "4",
+          "title": {
+            "en": "Level 4"
+          }
+        },
+        {
+          "id": "5",
+          "title": {
+            "en": "Level 5"
+          }
+        }
+      ]
+    },
+    "ac_hvane": {
+      "type": "enum",
+      "title": {
+        "en": "Horizontal Vane position"
+      },
+      "getable": true,
+      "setable": true,
+      "values": [
+        {
+          "id": "1",
+          "title": {
+            "en": "Position 1"
+          }
+        },
+        {
+          "id": "2",
+          "title": {
+            "en": "Position 2"
+          }
+        },
+        {
+          "id": "3",
+          "title": {
+            "en": "Position 3"
+          }
+        },
+        {
+          "id": "4",
+          "title": {
+            "en": "Position 4"
+          }
+        },
+        {
+          "id": "5",
+          "title": {
+            "en": "Position 5"
+          }
+        }
+      ]
+    },
+    "ac_mode": {
+      "title": {
+        "en": "Mode"
+      },
+      "type": "enum",
+      "uiComponent": "picker",
+      "getable": true,
+      "setable": true,
+      "values": [
+        {
+          "id": "0",
+          "title": {
+            "en": "Auto"
+          }
+        },
+        {
+          "id": "4",
+          "title": {
+            "en": "Cool"
+          }
+        },
+        {
+          "id": "1",
+          "title": {
+            "en": "Heat"
+          }
+        },
+        {
+          "id": "3",
+          "title": {
+            "en": "Fan"
+          }
+        },
+        {
+          "id": "2",
+          "title": {
+            "en": "Dry"
+          }
+        }
+      ]
+    },
+    "ac_vvane": {
+      "type": "enum",
+      "title": {
+        "en": "Vertical Vane position"
+      },
+      "getable": true,
+      "setable": true,
+      "values": [
+        {
+          "id": "0",
+          "title": {
+            "en": "auto/stop"
+          }
+        },
+        {
+          "id": "1",
+          "title": {
+            "en": "Position 1"
+          }
+        },
+        {
+          "id": "2",
+          "title": {
+            "en": "Position 2"
+          }
+        },
+        {
+          "id": "3",
+          "title": {
+            "en": "Position 3"
+          }
+        },
+        {
+          "id": "4",
+          "title": {
+            "en": "Position 4"
+          }
+        },
+        {
+          "id": "5",
+          "title": {
+            "en": "Position 5"
+          }
+        }
+      ]
+    }
+  }
+}

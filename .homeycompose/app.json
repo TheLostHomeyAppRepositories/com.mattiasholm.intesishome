@@ -1,0 +1,29 @@
+{
+  "id": "com.mattiasholm.intesishome",
+  "version": "1.0.0",
+  "compatibility": ">=5.0.0",
+  "brandColor": "#002b57",
+  "sdk": 3,
+  "platforms": [
+    "local"
+  ],
+  "name": {
+    "en": "IntesisHome"
+  },
+  "description": {
+    "en": "Take control of Intesis AC Cloud Control"
+  },
+  "category": [
+    "climate"
+  ],
+  "permissions": [],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png",
+    "xlarge": "/assets/images/xlarge.png"
+  },
+  "author": {
+    "name": "Mattias Holm",
+    "email": "m@wert.se"
+  }
+}
