@@ -3,7 +3,7 @@
     {
       "id": "ac_mode_action",
       "title": {"en": "Set mode" },
-      "titleFormatted" : {"en": "Set mode" },
+      "titleFormatted": { "en": "Set mode [[mode]]" },
       "args": [
         {
           "type": "dropdown",
@@ -21,7 +21,7 @@
     {
       "id": "ac_fan_speed_action",
       "title": { "en": "Set fan speed" },
-      "titleFormatted" : {"en": "Set fan speed" },
+      "titleFormatted": { "en": "Set fan speed to [[fan_speed]]" },
       "args": [
         {
           "type": "dropdown",
@@ -40,7 +40,7 @@
     {
       "id": "ac_hvane_action",
       "title": { "en": "Set horizontal vane direction" },
-      "titleFormatted" : {"en": "Set horizontal vane direction" },
+      "titleFormatted": { "en": "Set horizontal vane direction to [[hvane]]" },
       "args": [
         {
           "type": "dropdown",
@@ -59,7 +59,7 @@
     {
       "id": "ac_vvane_action",
       "title": { "en": "Set vertical vane direction" },
-      "titleFormatted" : {"en": "Set vertical vane direction" },
+      "titleFormatted": { "en": "Set vertical vane direction to [[vvane]]" },
       "args": [
         {
           "type": "dropdown",
