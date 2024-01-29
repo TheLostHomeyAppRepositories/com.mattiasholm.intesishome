@@ -3,7 +3,7 @@
 const { Device } = require('homey');
 const intesis = require('./intesishome')
 
-class IntesisHomeDevice extends Device {
+class PAACWIFI1ADevice extends Device {
   
   /**
    * onInit is called when the device is initialized.
@@ -11,7 +11,7 @@ class IntesisHomeDevice extends Device {
 
   async onInit() {
     this.settings = this.getSettings();
-    this.log('IntesisHome has been initialized');
+    this.log('PA-AC-WIFI-1A has been initialized');
     this.registerCapabilityListener('onoff', this.onCapabilityOnoff.bind(this));
     this.registerCapabilityListener('target_temperature', this.onCapabilityTarget_temperature.bind(this));
     this.registerCapabilityListener('measure_temperature', this.onCapabilityMeasure_temperature.bind(this));
@@ -46,7 +46,7 @@ class IntesisHomeDevice extends Device {
       this.onCapabilityAc_vvane(vvane); 
     })
 
-    this.log("polling intesisHome");
+    this.log("polling PA-AC-WIFI-1A");
     intesis.getStatus(this.settings, intesis.intesisRunner);
     this.setPollTimer(this.settings.interval);
   }
@@ -57,14 +57,14 @@ class IntesisHomeDevice extends Device {
     }else if (value == true){
       value = 1
     }
-    this.log('IntesisHome onoff' + value);
+    this.log('PA-AC-WIFI-1A onoff' + value);
     //var _cmd = '{"command":"set","data":{"deviceId":127934848804,"uid":1,"value":'+value+',"seqNo":3}}'
     var _cmd = intesis.generateCommand(this.settings.intesisDeviceID, 1, value);
     intesis.sendCommand(_cmd)
   }
 
   async onCapabilityMeasure_temperature(){
-    this.log('IntesisHome measure temperature');
+    this.log('PA-AC-WIFI-1A measure temperature');
   }
 
   async onCapabilityTarget_temperature(value){
@@ -72,42 +72,42 @@ class IntesisHomeDevice extends Device {
     //var _cmd = '{"command":"set","data":{"deviceId":127934848804,"uid":9,"value":'+value+',"seqNo":3}}'
     var _cmd = intesis.generateCommand(this.settings.intesisDeviceID, 9, value);
     intesis.sendCommand(_cmd)
-    this.log('IntesisHome target temperature: ' + value);
+    this.log('PA-AC-WIFI-1A target temperature: ' + value);
   }
 
   async onCapabilityAc_mode(value){
     //var _cmd = '{"command":"set","data":{"deviceId":127934848804,"uid":2,"value":'+value+',"seqNo":3}}'
     var _cmd = intesis.generateCommand(this.settings.intesisDeviceID, 2, value);
     intesis.sendCommand(_cmd)
-    this.log('IntesisHome ac_mode: ' + value);
+    this.log('PA-AC-WIFI-1A ac_mode: ' + value);
   }
 
   async onCapabilityAc_fan_speed(value){
     //var _cmd = '{"command":"set","data":{"deviceId":127934848804,"uid":4,"value":'+value+',"seqNo":3}}'
     var _cmd = intesis.generateCommand(this.settings.intesisDeviceID, 4, value);
     intesis.sendCommand(_cmd)
-    this.log('IntesisHome ac_fan_speed: ' + value);
+    this.log('PA-AC-WIFI-1A ac_fan_speed: ' + value);
   }
 
   async onCapabilityAc_vvane(value){
     //var _cmd = '{"command":"set","data":{"deviceId":127934848804,"uid":5,"value":'+value+',"seqNo":3}}'
     var _cmd = intesis.generateCommand(this.settings.intesisDeviceID, 5, value);
     intesis.sendCommand(_cmd)
-    this.log('IntesisHome ac_vvane: ' + value);
+    this.log('PA-AC-WIFI-1A ac_vvane: ' + value);
   }
 
   async onCapabilityAc_hvane(value){
     //var _cmd = '{"command":"set","data":{"deviceId":127934848804,"uid":6,"value":'+value+',"seqNo":3}}'
     var _cmd = intesis.generateCommand(this.settings.intesisDeviceID, 6, value);
     intesis.sendCommand(_cmd)
-    this.log('IntesisHome ac_hvane: ' + value);
+    this.log('PA-AC-WIFI-1A ac_hvane: ' + value);
   }
 
   /**
    * onAdded is called when the user adds the device, called just after pairing.
    */
   async onAdded() {
-    this.log('IntesisHome has been added');
+    this.log('PA-AC-WIFI-1A has been added');
   }
 
   /**
@@ -119,9 +119,9 @@ class IntesisHomeDevice extends Device {
    * @returns {Promise<string|void>} return a custom message that will be displayed
    */
   async onSettings({ oldSettings, newSettings, changedKeys }) {
-    this.log('IntesisHome settings where changed');
+    this.log('PA-AC-WIFI-1A settings where changed');
     this.settings = this.getSettings();
-    this.log("polling intesisHome");
+    this.log("polling PA-AC-WIFI-1A");
     intesis.getStatus(this.settings, intesis.intesisRunner);
     this.setPollTimer(this.settings.interval);
   }
@@ -132,14 +132,14 @@ class IntesisHomeDevice extends Device {
    * @param {string} name The new name
    */
   async onRenamed(name) {
-    this.log('IntesisHome was renamed');
+    this.log('PA-AC-WIFI-1A was renamed');
   }
 
   /**
    * onDeleted is called when the user deleted the device.
    */
   async onDeleted() {
-    this.log('IntesisHome has been deleted');
+    this.log('PA-AC-WIFI-1A has been deleted');
   }
 
   updateAllValues(){
@@ -176,4 +176,4 @@ class IntesisHomeDevice extends Device {
   }
 }
 
-module.exports = IntesisHomeDevice;
+module.exports = PAACWIFI1ADevice;

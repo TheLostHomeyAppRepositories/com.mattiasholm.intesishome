@@ -1,3 +1,3 @@
-Allows you to control your IntesisHome enabled air conditioner.
+Allows you to control your IntesisHome / AC Cloud Control enabled air conditioner.
 
-Tested against a PA-AC-WIFI-1A device.
+Tested against an PA-AC-WIFI-1A device.
