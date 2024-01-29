@@ -38,7 +38,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=intesishome"
+            "filter": "driver_id=PA-AC-WIFI-1A"
           },
           {
             "type": "dropdown",
@@ -87,7 +87,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=intesishome"
+            "filter": "driver_id=PA-AC-WIFI-1A"
           },
           {
             "type": "dropdown",
@@ -139,7 +139,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=intesishome"
+            "filter": "driver_id=PA-AC-WIFI-1A"
           },
           {
             "type": "dropdown",
@@ -191,7 +191,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=intesishome"
+            "filter": "driver_id=PA-AC-WIFI-1A"
           },
           {
             "type": "dropdown",
@@ -239,7 +239,7 @@
   "drivers": [
     {
       "name": {
-        "en": "IntesisHome"
+        "en": "PA-AC-WIFI-1A"
       },
       "class": "other",
       "capabilities": [
@@ -283,9 +283,9 @@
         }
       },
       "images": {
-        "small": "/drivers/intesishome/assets/images/small.png",
-        "large": "/drivers/intesishome/assets/images/large.png",
-        "xlarge": "/drivers/intesishome/assets/images/xlarge.png"
+        "small": "/drivers/PA-AC-WIFI-1A/assets/images/small.png",
+        "large": "/drivers/PA-AC-WIFI-1A/assets/images/large.png",
+        "xlarge": "/drivers/PA-AC-WIFI-1A/assets/images/xlarge.png"
       },
       "pair": [
         {
@@ -337,7 +337,7 @@
           ]
         }
       ],
-      "id": "intesishome"
+      "id": "PA-AC-WIFI-1A"
     }
   ],
   "capabilities": {
