@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.mattiasholm.intesishome",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "compatibility": ">=5.0.0",
   "brandColor": "#002b57",
   "sdk": 3,
@@ -33,6 +33,9 @@
         "id": "ac_mode_action",
         "title": {
           "en": "Set mode"
+        },
+        "titleFormatted": {
+          "en": "Set mode [[mode]]"
         },
         "args": [
           {
@@ -82,6 +85,9 @@
         "id": "ac_fan_speed_action",
         "title": {
           "en": "Set fan speed"
+        },
+        "titleFormatted": {
+          "en": "Set fan speed to [[fan_speed]]"
         },
         "args": [
           {
@@ -135,6 +141,9 @@
         "title": {
           "en": "Set horizontal vane direction"
         },
+        "titleFormatted": {
+          "en": "Set horizontal vane direction to [[hvane]]"
+        },
         "args": [
           {
             "type": "device",
@@ -186,6 +195,9 @@
         "id": "ac_vvane_action",
         "title": {
           "en": "Set vertical vane direction"
+        },
+        "titleFormatted": {
+          "en": "Set vertical vane direction to [[vvane]]"
         },
         "args": [
           {
