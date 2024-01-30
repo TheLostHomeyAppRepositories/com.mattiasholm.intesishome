@@ -403,6 +403,12 @@
       "setable": true,
       "values": [
         {
+          "id": "0",
+          "title": {
+            "en": "auto/stop"
+          }
+        },
+        {
           "id": "1",
           "title": {
             "en": "Position 1"
