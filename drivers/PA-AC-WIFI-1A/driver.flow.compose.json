@@ -28,6 +28,7 @@
           "name": "fan_speed",
           "title": { "en": "Fan speed" },
           "values": [
+            { "id": "0", "title": { "en": "auto" } },
             { "id": "1", "title": { "en": "1" } },
             { "id": "2", "title": { "en": "2" } },
             { "id": "3", "title": { "en": "3" } },

@@ -1,12 +1,13 @@
     <script>
     Homey.setTitle( Homey.__('pair.title') );
     let settings;
+    let Gmessage;
     function authenticate () {
         $('.err-msg').text('');
         document.getElementById('authenticate').classList.add = "is-loading"
         var formUsername = $('#username').val();
         var formPassword = $('#password').val();
-        var formInterval = $('#interval').val();
+        var formInterval = parseInt($('#interval').val());
         
      
         settings = {
@@ -25,9 +26,10 @@
     }
 
     function saveSettings(){
-        var formIntesisDeviceID = $('#intesisDeviceID').val();
+        var formIntesisDeviceID = parseInt($('#intesisDeviceID').val());
         settings.intesisDeviceID = formIntesisDeviceID
-
+        Gmessage.config.token = '';
+       
         Homey.createDevice({
                 name: "IntesisHome",
                 data: {
@@ -36,7 +38,7 @@
                 settings: settings
                 }, (err, result)=>{
                     if (err) {
-                        $('.err-msg').text(__('pair.error2') + ' (' + err + ')');
+                        $('.err-msg').text(__('pair.error2') + ' (' + err + '\n' + JSON.stringify(Gmessage.config) + ')');
                         return;
                     }
                 Homey.done();                    
@@ -45,6 +47,7 @@
   
     Homey.on('validationResult', function(message){
         let bailOut='';
+        Gmessage=message;
         if (message.config.installation.length == 0){
             bailOut = 'No installation found';
         }
@@ -85,7 +88,7 @@
         <input class="homey-form-input" id="password" type="password" value=""/>
         <label class="homey-form-label" for="intesisDeviceID" data-i18n="pair.device"></label>
         <select class="homey-form-select" id="intesisDeviceID"></select>
-        <input class="homey-form-input" id="interval" type="hidden" value="10"/>
+        <input class="homey-form-input" id="interval" type="hidden" value="30"/>
     </div>
     <button class="homey-button-primary-full" data-i18n="pair.authenticate" id="authenticate" onclick="authenticate()"></button>
     <button class="homey-button-primary-full" style="display:none" data-i18n="pair.save" id="save" onclick="saveSettings()"></button>
