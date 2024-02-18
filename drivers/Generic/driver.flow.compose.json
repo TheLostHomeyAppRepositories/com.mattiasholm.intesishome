@@ -1,7 +1,7 @@
 {
   "actions": [
     {
-      "id": "ac_mode_action",
+      "id": "generic_ac_mode_action",
       "title": {"en": "Set mode" },
       "titleFormatted": { "en": "Set mode [[mode]]" },
       "args": [
@@ -19,7 +19,7 @@
       ]
     },
     {
-      "id": "ac_fan_speed_action",
+      "id": "generic_ac_fan_speed_action",
       "title": { "en": "Set fan speed" },
       "titleFormatted": { "en": "Set fan speed to [[fan_speed]]" },
       "args": [
@@ -39,7 +39,7 @@
       ]
     },
     {
-      "id": "ac_hvane_action",
+      "id": "generic_ac_hvane_action",
       "title": { "en": "Set horizontal vane direction" },
       "titleFormatted": { "en": "Set horizontal vane direction to [[hvane]]" },
       "args": [
@@ -53,13 +53,14 @@
             { "id": "2", "title": { "en": "2" } },
             { "id": "3", "title": { "en": "3" } },
             { "id": "4", "title": { "en": "4" } },
-            { "id": "5", "title": { "en": "5" } }
+            { "id": "5", "title": { "en": "5" } },
+            { "id": "10", "title": { "en": "Swing" } }
           ]
         }
       ]
     },
     {
-      "id": "ac_vvane_action",
+      "id": "generic_ac_vvane_action",
       "title": { "en": "Set vertical vane direction" },
       "titleFormatted": { "en": "Set vertical vane direction to [[vvane]]" },
       "args": [
@@ -73,7 +74,8 @@
             { "id": "2", "title": { "en": "2" } },
             { "id": "3", "title": { "en": "3" } },
             { "id": "4", "title": { "en": "4" } },
-            { "id": "5", "title": { "en": "5" } }
+            { "id": "5", "title": { "en": "5" } },
+            { "id": "10", "title": { "en": "Swing" } }
           ]
         }
       ]

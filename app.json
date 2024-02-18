@@ -30,6 +30,253 @@
   "flow": {
     "actions": [
       {
+        "id": "generic_ac_mode_action",
+        "title": {
+          "en": "Set mode"
+        },
+        "titleFormatted": {
+          "en": "Set mode [[mode]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=Generic"
+          },
+          {
+            "type": "dropdown",
+            "name": "mode",
+            "values": [
+              {
+                "id": "0",
+                "label": {
+                  "en": "Auto"
+                }
+              },
+              {
+                "id": "4",
+                "label": {
+                  "en": "Cool"
+                }
+              },
+              {
+                "id": "1",
+                "label": {
+                  "en": "Heat"
+                }
+              },
+              {
+                "id": "3",
+                "label": {
+                  "en": "Fan"
+                }
+              },
+              {
+                "id": "2",
+                "label": {
+                  "en": "Dry"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "generic_ac_fan_speed_action",
+        "title": {
+          "en": "Set fan speed"
+        },
+        "titleFormatted": {
+          "en": "Set fan speed to [[fan_speed]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=Generic"
+          },
+          {
+            "type": "dropdown",
+            "name": "fan_speed",
+            "title": {
+              "en": "Fan speed"
+            },
+            "values": [
+              {
+                "id": "0",
+                "title": {
+                  "en": "auto"
+                }
+              },
+              {
+                "id": "1",
+                "title": {
+                  "en": "1"
+                }
+              },
+              {
+                "id": "2",
+                "title": {
+                  "en": "2"
+                }
+              },
+              {
+                "id": "3",
+                "title": {
+                  "en": "3"
+                }
+              },
+              {
+                "id": "4",
+                "title": {
+                  "en": "4"
+                }
+              },
+              {
+                "id": "5",
+                "title": {
+                  "en": "5"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "generic_ac_hvane_action",
+        "title": {
+          "en": "Set horizontal vane direction"
+        },
+        "titleFormatted": {
+          "en": "Set horizontal vane direction to [[hvane]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=Generic"
+          },
+          {
+            "type": "dropdown",
+            "name": "hvane",
+            "title": {
+              "en": "Direction"
+            },
+            "values": [
+              {
+                "id": "0",
+                "title": {
+                  "en": "Auto/Stop"
+                }
+              },
+              {
+                "id": "1",
+                "title": {
+                  "en": "1"
+                }
+              },
+              {
+                "id": "2",
+                "title": {
+                  "en": "2"
+                }
+              },
+              {
+                "id": "3",
+                "title": {
+                  "en": "3"
+                }
+              },
+              {
+                "id": "4",
+                "title": {
+                  "en": "4"
+                }
+              },
+              {
+                "id": "5",
+                "title": {
+                  "en": "5"
+                }
+              },
+              {
+                "id": "10",
+                "title": {
+                  "en": "Swing"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "generic_ac_vvane_action",
+        "title": {
+          "en": "Set vertical vane direction"
+        },
+        "titleFormatted": {
+          "en": "Set vertical vane direction to [[vvane]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=Generic"
+          },
+          {
+            "type": "dropdown",
+            "name": "vvane",
+            "title": {
+              "en": "Direction"
+            },
+            "values": [
+              {
+                "id": "0",
+                "title": {
+                  "en": "Auto/Stop"
+                }
+              },
+              {
+                "id": "1",
+                "title": {
+                  "en": "1"
+                }
+              },
+              {
+                "id": "2",
+                "title": {
+                  "en": "2"
+                }
+              },
+              {
+                "id": "3",
+                "title": {
+                  "en": "3"
+                }
+              },
+              {
+                "id": "4",
+                "title": {
+                  "en": "4"
+                }
+              },
+              {
+                "id": "5",
+                "title": {
+                  "en": "5"
+                }
+              },
+              {
+                "id": "10",
+                "title": {
+                  "en": "Swing"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
         "id": "ac_mode_action",
         "title": {
           "en": "Set mode"
@@ -164,6 +411,12 @@
             },
             "values": [
               {
+                "id": "0",
+                "title": {
+                  "en": "Auto/Stop"
+                }
+              },
+              {
                 "id": "1",
                 "title": {
                   "en": "1"
@@ -219,6 +472,12 @@
             },
             "values": [
               {
+                "id": "0",
+                "title": {
+                  "en": "Auto/Stop"
+                }
+              },
+              {
                 "id": "1",
                 "title": {
                   "en": "1"
@@ -255,6 +514,128 @@
     ]
   },
   "drivers": [
+    {
+      "name": {
+        "en": "Generic"
+      },
+      "class": "other",
+      "capabilities": [
+        "target_temperature",
+        "measure_temperature",
+        "onoff",
+        "generic_ac_fan_speed",
+        "generic_ac_mode",
+        "generic_ac_vvane",
+        "generic_ac_hvane"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "cloud"
+      ],
+      "capabilitiesOptions": {
+        "onoff": {
+          "title": {
+            "en": "Power"
+          }
+        },
+        "target_temperature": {
+          "title": {
+            "en": "Target temperature"
+          },
+          "type": "Number",
+          "units": "°C",
+          "decimals": 0,
+          "step": 1,
+          "min": 16,
+          "max": 30
+        },
+        "measure_temperature": {
+          "title": {
+            "en": "Temperature"
+          },
+          "type": "Number",
+          "units": "°C"
+        },
+        "generic_ac_fan_speed": {
+          "title": {
+            "en": "Fan speed"
+          }
+        },
+        "generic_ac_mode": {
+          "title": {
+            "en": "Mode"
+          }
+        },
+        "generic_ac_vvane": {
+          "title": {
+            "en": "Vertical vane"
+          }
+        },
+        "generic_ac_hvane": {
+          "title": {
+            "en": "Horizontal vane"
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/Generic/assets/images/small.png",
+        "large": "/drivers/Generic/assets/images/large.png",
+        "xlarge": "/drivers/Generic/assets/images/xlarge.png"
+      },
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "settings"
+          }
+        },
+        {
+          "id": "settings"
+        }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Account settings"
+          },
+          "children": [
+            {
+              "id": "username",
+              "type": "text",
+              "label": {
+                "en": "Username"
+              }
+            },
+            {
+              "id": "password",
+              "type": "password",
+              "label": {
+                "en": "Password"
+              }
+            },
+            {
+              "id": "intesisDeviceID",
+              "type": "label",
+              "label": {
+                "en": "intesisHome DeviceID"
+              }
+            },
+            {
+              "id": "interval",
+              "type": "number",
+              "label": {
+                "en": "Data poll interval in seconds"
+              }
+            }
+          ]
+        }
+      ],
+      "id": "Generic"
+    },
     {
       "name": {
         "en": "PA-AC-WIFI-1A"
@@ -298,6 +679,26 @@
           },
           "type": "Number",
           "units": "°C"
+        },
+        "ac_fan_speed": {
+          "title": {
+            "en": "Fan speed"
+          }
+        },
+        "ac_mode": {
+          "title": {
+            "en": "Mode"
+          }
+        },
+        "ac_vvane": {
+          "title": {
+            "en": "Vertical vane"
+          }
+        },
+        "ac_hvane": {
+          "title": {
+            "en": "Horizontal vane"
+          }
         }
       },
       "images": {
@@ -535,6 +936,198 @@
           "id": "5",
           "title": {
             "en": "Position 5"
+          }
+        }
+      ]
+    },
+    "generic_ac_fan_speed": {
+      "title": {
+        "en": "Fan speed"
+      },
+      "type": "enum",
+      "uiComponent": "picker",
+      "getable": true,
+      "setable": true,
+      "values": [
+        {
+          "id": "0",
+          "title": {
+            "en": "auto"
+          }
+        },
+        {
+          "id": "1",
+          "title": {
+            "en": "Level 1"
+          }
+        },
+        {
+          "id": "2",
+          "title": {
+            "en": "Level 2"
+          }
+        },
+        {
+          "id": "3",
+          "title": {
+            "en": "Level 3"
+          }
+        },
+        {
+          "id": "4",
+          "title": {
+            "en": "Level 4"
+          }
+        },
+        {
+          "id": "5",
+          "title": {
+            "en": "Level 5"
+          }
+        }
+      ]
+    },
+    "generic_ac_hvane": {
+      "type": "enum",
+      "title": {
+        "en": "Horizontal Vane position"
+      },
+      "getable": true,
+      "setable": true,
+      "values": [
+        {
+          "id": "0",
+          "title": {
+            "en": "auto/stop"
+          }
+        },
+        {
+          "id": "1",
+          "title": {
+            "en": "Position 1"
+          }
+        },
+        {
+          "id": "2",
+          "title": {
+            "en": "Position 2"
+          }
+        },
+        {
+          "id": "3",
+          "title": {
+            "en": "Position 3"
+          }
+        },
+        {
+          "id": "4",
+          "title": {
+            "en": "Position 4"
+          }
+        },
+        {
+          "id": "5",
+          "title": {
+            "en": "Position 5"
+          }
+        },
+        {
+          "id": "10",
+          "title": {
+            "en": "Swing"
+          }
+        }
+      ]
+    },
+    "generic_ac_mode": {
+      "title": {
+        "en": "Mode"
+      },
+      "type": "enum",
+      "uiComponent": "picker",
+      "getable": true,
+      "setable": true,
+      "values": [
+        {
+          "id": "0",
+          "title": {
+            "en": "Auto"
+          }
+        },
+        {
+          "id": "4",
+          "title": {
+            "en": "Cool"
+          }
+        },
+        {
+          "id": "1",
+          "title": {
+            "en": "Heat"
+          }
+        },
+        {
+          "id": "3",
+          "title": {
+            "en": "Fan"
+          }
+        },
+        {
+          "id": "2",
+          "title": {
+            "en": "Dry"
+          }
+        }
+      ]
+    },
+    "generic_ac_vvane": {
+      "type": "enum",
+      "title": {
+        "en": "Vertical Vane position"
+      },
+      "getable": true,
+      "setable": true,
+      "values": [
+        {
+          "id": "0",
+          "title": {
+            "en": "auto/stop"
+          }
+        },
+        {
+          "id": "1",
+          "title": {
+            "en": "Position 1"
+          }
+        },
+        {
+          "id": "2",
+          "title": {
+            "en": "Position 2"
+          }
+        },
+        {
+          "id": "3",
+          "title": {
+            "en": "Position 3"
+          }
+        },
+        {
+          "id": "4",
+          "title": {
+            "en": "Position 4"
+          }
+        },
+        {
+          "id": "5",
+          "title": {
+            "en": "Position 5"
+          }
+        },
+        {
+          "id": "10",
+          "title": {
+            "en": "Swing"
           }
         }
       ]

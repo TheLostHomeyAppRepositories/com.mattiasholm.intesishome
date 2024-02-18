@@ -3,7 +3,7 @@
 const { Device } = require('homey');
 const intesis = require('../../lib/intesishome')
 
-class PAACWIFI1ADevice extends Device {
+class GenericDevice extends Device {
   
   /**
    * onInit is called when the device is initialized.
@@ -11,19 +11,19 @@ class PAACWIFI1ADevice extends Device {
 
   async onInit() {
     this.settings = this.getSettings();
-    this.log('PA-AC-WIFI-1A has been initialized');
+    this.log('Generic ac cloud has been initialized');
     this.registerCapabilityListener('onoff', this.onCapabilityOnoff.bind(this));
     this.registerCapabilityListener('target_temperature', this.onCapabilityTarget_temperature.bind(this));
     this.registerCapabilityListener('measure_temperature', this.onCapabilityMeasure_temperature.bind(this));
-    this.registerCapabilityListener('ac_mode', this.onCapabilityAc_mode.bind(this));
-    this.registerCapabilityListener('ac_fan_speed', this.onCapabilityAc_fan_speed.bind(this));
-    this.registerCapabilityListener('ac_vvane', this.onCapabilityAc_vvane.bind(this));
-    this.registerCapabilityListener('ac_hvane', this.onCapabilityAc_hvane.bind(this));
+    this.registerCapabilityListener('generic_ac_mode', this.onCapabilityAc_mode.bind(this));
+    this.registerCapabilityListener('generic_ac_fan_speed', this.onCapabilityAc_fan_speed.bind(this));
+    this.registerCapabilityListener('generic_ac_vvane', this.onCapabilityAc_vvane.bind(this));
+    this.registerCapabilityListener('generic_ac_hvane', this.onCapabilityAc_hvane.bind(this));
     
-    const ac_mode_card = this.homey.flow.getActionCard('ac_mode_action');
-    const ac_fan_speed_card = this.homey.flow.getActionCard('ac_fan_speed_action');
-    const ac_hvane_card = this.homey.flow.getActionCard('ac_hvane_action');
-    const ac_vvane_card = this.homey.flow.getActionCard('ac_vvane_action');
+    const ac_mode_card = this.homey.flow.getActionCard('generic_ac_mode_action');
+    const ac_fan_speed_card = this.homey.flow.getActionCard('generic_ac_fan_speed_action');
+    const ac_hvane_card = this.homey.flow.getActionCard('generic_ac_hvane_action');
+    const ac_vvane_card = this.homey.flow.getActionCard('generic_ac_vvane_action');
 
 
     ac_mode_card.registerRunListener(async (args) => {
@@ -46,7 +46,7 @@ class PAACWIFI1ADevice extends Device {
       this.onCapabilityAc_vvane(vvane); 
     })
 
-    this.log("polling PA-AC-WIFI-1A");
+    this.log("polling Generic ac cloud device");
     intesis.getStatus(this.settings, intesis.intesisRunner);
     this.setPollTimer(this.settings.interval);
   }
@@ -57,14 +57,14 @@ class PAACWIFI1ADevice extends Device {
     }else if (value == true){
       value = 1
     }
-    this.log('PA-AC-WIFI-1A onoff' + value);
+    this.log('Generic ac cloud device onoff' + value);
     //var _cmd = '{"command":"set","data":{"deviceId":127934848804,"uid":1,"value":'+value+',"seqNo":3}}'
     var _cmd = intesis.generateCommand(this.settings.intesisDeviceID, 1, value);
     intesis.sendCommand(_cmd)
   }
 
   async onCapabilityMeasure_temperature(){
-    this.log('PA-AC-WIFI-1A measure temperature');
+    this.log('Generic ac cloud device measure temperature');
   }
 
   async onCapabilityTarget_temperature(value){
@@ -72,42 +72,42 @@ class PAACWIFI1ADevice extends Device {
     //var _cmd = '{"command":"set","data":{"deviceId":127934848804,"uid":9,"value":'+value+',"seqNo":3}}'
     var _cmd = intesis.generateCommand(this.settings.intesisDeviceID, 9, value);
     intesis.sendCommand(_cmd)
-    this.log('PA-AC-WIFI-1A target temperature: ' + value);
+    this.log('Generic ac cloud device target temperature: ' + value);
   }
 
   async onCapabilityAc_mode(value){
     //var _cmd = '{"command":"set","data":{"deviceId":127934848804,"uid":2,"value":'+value+',"seqNo":3}}'
     var _cmd = intesis.generateCommand(this.settings.intesisDeviceID, 2, value);
     intesis.sendCommand(_cmd)
-    this.log('PA-AC-WIFI-1A ac_mode: ' + value);
+    this.log('Generic ac cloud device ac_mode: ' + value);
   }
 
   async onCapabilityAc_fan_speed(value){
     //var _cmd = '{"command":"set","data":{"deviceId":127934848804,"uid":4,"value":'+value+',"seqNo":3}}'
     var _cmd = intesis.generateCommand(this.settings.intesisDeviceID, 4, value);
     intesis.sendCommand(_cmd)
-    this.log('PA-AC-WIFI-1A ac_fan_speed: ' + value);
+    this.log('Generic ac cloud device ac_fan_speed: ' + value);
   }
 
   async onCapabilityAc_vvane(value){
     //var _cmd = '{"command":"set","data":{"deviceId":127934848804,"uid":5,"value":'+value+',"seqNo":3}}'
     var _cmd = intesis.generateCommand(this.settings.intesisDeviceID, 5, value);
     intesis.sendCommand(_cmd)
-    this.log('PA-AC-WIFI-1A ac_vvane: ' + value);
+    this.log('Generic ac cloud device ac_vvane: ' + value);
   }
 
   async onCapabilityAc_hvane(value){
     //var _cmd = '{"command":"set","data":{"deviceId":127934848804,"uid":6,"value":'+value+',"seqNo":3}}'
     var _cmd = intesis.generateCommand(this.settings.intesisDeviceID, 6, value);
     intesis.sendCommand(_cmd)
-    this.log('PA-AC-WIFI-1A ac_hvane: ' + value);
+    this.log('Generic ac cloud device ac_hvane: ' + value);
   }
 
   /**
    * onAdded is called when the user adds the device, called just after pairing.
    */
   async onAdded() {
-    this.log('PA-AC-WIFI-1A has been added');
+    this.log('Generic ac cloud device has been added');
   }
 
   /**
@@ -119,9 +119,9 @@ class PAACWIFI1ADevice extends Device {
    * @returns {Promise<string|void>} return a custom message that will be displayed
    */
   async onSettings({ oldSettings, newSettings, changedKeys }) {
-    this.log('PA-AC-WIFI-1A settings where changed');
+    this.log('Generic ac cloud device  settings where changed');
     this.settings = this.getSettings();
-    this.log("polling PA-AC-WIFI-1A");
+    this.log("polling Generic ac cloud device ");
     intesis.getStatus(this.settings, intesis.intesisRunner);
     this.setPollTimer(this.settings.interval);
   }
@@ -132,23 +132,23 @@ class PAACWIFI1ADevice extends Device {
    * @param {string} name The new name
    */
   async onRenamed(name) {
-    this.log('PA-AC-WIFI-1A was renamed');
+    this.log('Generic ac cloud device was renamed');
   }
 
   /**
    * onDeleted is called when the user deleted the device.
    */
   async onDeleted() {
-    this.log('PA-AC-WIFI-1A has been deleted');
+    this.log('Generic ac cloud device has been deleted');
   }
 
   updateAllValues(){
     let _map = {
       "power": "onoff",
-      "mode": "ac_mode",
-      "fanspeed": "ac_fan_speed",
-      "vvane": "ac_vvane",
-      "hvane": "ac_hvane",
+      "mode": "generic_ac_mode",
+      "fanspeed": "generic_ac_fan_speed",
+      "vvane": "generic_ac_vvane",
+      "hvane": "generic_ac_hvane",
       "setpoint": "target_temperature",
       "ambient": "measure_temperature"
     };
@@ -166,10 +166,10 @@ class PAACWIFI1ADevice extends Device {
           _val = String(intesis.STATUS[attr]);
         }
 
-        try{ 
+        // Some devices seems to send ".", no idea which or why. 
+        // Other that those we want a crash here to get the logs from homey
+        if (_val != "."){ 
           this.setCapabilityValue(_map[attr], _val);      
-        }catch (error){
-          console.log("PA-AC-WIFI-1A.updateAllValues: " + error)
         }
       }
     }
@@ -182,4 +182,4 @@ class PAACWIFI1ADevice extends Device {
   }
 }
 
-module.exports = PAACWIFI1ADevice;
+module.exports = GenericDevice;

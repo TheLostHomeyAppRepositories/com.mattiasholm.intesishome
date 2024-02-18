@@ -1,16 +1,16 @@
 {
   "name": {
-    "en": "PA-AC-WIFI-1A"
+    "en": "Generic"
   },
   "class": "other",
   "capabilities": [
     "target_temperature",
     "measure_temperature",
     "onoff",
-    "ac_fan_speed",
-    "ac_mode",
-    "ac_vvane", 
-    "ac_hvane"
+    "generic_ac_fan_speed",
+    "generic_ac_mode",
+    "generic_ac_vvane", 
+    "generic_ac_hvane"
   ],
   "platforms": [
     "local"
@@ -42,22 +42,22 @@
       "type": "Number",
       "units": "°C"      
     },
-    "ac_fan_speed": {
+    "generic_ac_fan_speed": {
       "title": {
         "en": "Fan speed"
       }
     },
-    "ac_mode": {
+    "generic_ac_mode": {
       "title": {
         "en": "Mode"
       }
     },
-    "ac_vvane": {
+    "generic_ac_vvane": {
       "title": {
         "en": "Vertical vane"
       }
     },
-    "ac_hvane": {
+    "generic_ac_hvane": {
       "title": {
         "en": "Horizontal vane"
       }

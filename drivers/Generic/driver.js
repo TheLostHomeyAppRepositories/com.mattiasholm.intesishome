@@ -4,13 +4,13 @@ const { Driver } = require('homey');
 
 const intesis = require('../../lib/intesishome')
 const util = require('util');
-class PAACWIFI1ADriver extends Driver {
+class GenericDriver extends Driver {
 
   /**
    * onInit is called when the driver is initialized.
    */
   async onInit() {
-    this.log('PA-AC-WIFI-1A Driver has been initialized');
+    this.log('Generic AC cloud device driver has been initialized');
   }
 
   /**
@@ -21,9 +21,9 @@ class PAACWIFI1ADriver extends Driver {
   async onPairListDevices() {
     return [
       {
-        name: 'PA-AC-WIFI-1A',
+        name: 'GenericDriver',
         data: {
-          id: 'PA-AC-WIFI-1A'
+          id: 'GenericDriver'
         }
       }
     ];
@@ -51,4 +51,4 @@ class PAACWIFI1ADriver extends Driver {
 
 }
 
-module.exports = PAACWIFI1ADriver;
+module.exports = GenericDriver;
