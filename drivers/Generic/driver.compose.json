@@ -99,7 +99,7 @@
       }
     }, {
       "id": "intesisDeviceID",
-      "type": "label",
+      "type": "number",
       "label": {
         "en": "intesisHome DeviceID"
       }
