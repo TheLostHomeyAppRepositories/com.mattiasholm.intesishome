@@ -10,5 +10,8 @@
   },
   "1.0.3": {
     "en": "Fixed Fan speed bug + added information to potential pairing issues"
+  },
+  "1.1.0": {
+    "en": "Added Generic device"
   }
 }
