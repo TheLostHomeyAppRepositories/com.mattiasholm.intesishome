@@ -13,5 +13,8 @@
   },
   "1.1.0": {
     "en": "Added Generic device"
+  },
+  "1.1.1": {
+    "en": "Fixed type for setting device id"
   }
 }
