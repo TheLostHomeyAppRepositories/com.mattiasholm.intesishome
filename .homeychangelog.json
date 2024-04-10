@@ -19,5 +19,8 @@
   },
   "1.1.2": {
     "en": "New icons for the generic driver"
+  },
+  "1.1.3": {
+    "en": "Added support for multiple devices"
   }
 }
