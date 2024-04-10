@@ -58,7 +58,6 @@ class GenericDevice extends Device {
       value = 1
     }
     this.log('Generic ac cloud device onoff' + value);
-    //var _cmd = '{"command":"set","data":{"deviceId":127934848804,"uid":1,"value":'+value+',"seqNo":3}}'
     var _cmd = intesis.generateCommand(this.settings.intesisDeviceID, 1, value);
     intesis.sendCommand(_cmd)
   }
@@ -69,35 +68,30 @@ class GenericDevice extends Device {
 
   async onCapabilityTarget_temperature(value){
     value = parseInt(value) * 10
-    //var _cmd = '{"command":"set","data":{"deviceId":127934848804,"uid":9,"value":'+value+',"seqNo":3}}'
     var _cmd = intesis.generateCommand(this.settings.intesisDeviceID, 9, value);
     intesis.sendCommand(_cmd)
     this.log('Generic ac cloud device target temperature: ' + value);
   }
 
   async onCapabilityAc_mode(value){
-    //var _cmd = '{"command":"set","data":{"deviceId":127934848804,"uid":2,"value":'+value+',"seqNo":3}}'
     var _cmd = intesis.generateCommand(this.settings.intesisDeviceID, 2, value);
     intesis.sendCommand(_cmd)
     this.log('Generic ac cloud device ac_mode: ' + value);
   }
 
   async onCapabilityAc_fan_speed(value){
-    //var _cmd = '{"command":"set","data":{"deviceId":127934848804,"uid":4,"value":'+value+',"seqNo":3}}'
     var _cmd = intesis.generateCommand(this.settings.intesisDeviceID, 4, value);
     intesis.sendCommand(_cmd)
     this.log('Generic ac cloud device ac_fan_speed: ' + value);
   }
 
   async onCapabilityAc_vvane(value){
-    //var _cmd = '{"command":"set","data":{"deviceId":127934848804,"uid":5,"value":'+value+',"seqNo":3}}'
     var _cmd = intesis.generateCommand(this.settings.intesisDeviceID, 5, value);
     intesis.sendCommand(_cmd)
     this.log('Generic ac cloud device ac_vvane: ' + value);
   }
 
   async onCapabilityAc_hvane(value){
-    //var _cmd = '{"command":"set","data":{"deviceId":127934848804,"uid":6,"value":'+value+',"seqNo":3}}'
     var _cmd = intesis.generateCommand(this.settings.intesisDeviceID, 6, value);
     intesis.sendCommand(_cmd)
     this.log('Generic ac cloud device ac_hvane: ' + value);
@@ -166,10 +160,13 @@ class GenericDevice extends Device {
           _val = String(intesis.STATUS[attr]);
         }
 
-        // Some devices seems to send ".", no idea which or why. 
-        // Other that those we want a crash here to get the logs from homey
+        // Some devices seems to send ".", no idea which or why.
         if (_val != "."){ 
-          this.setCapabilityValue(_map[attr], _val);      
+          try{
+            this.setCapabilityValue(_map[attr], _val);
+          }catch (error){
+            Error("PA-AC-WIFI-1A.updateAllValues: " + error)
+          }
         }
       }
     }
